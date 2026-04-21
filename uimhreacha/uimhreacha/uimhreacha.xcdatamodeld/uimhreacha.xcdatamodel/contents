@@ -11,8 +11,14 @@
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="eventType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventType" inverseName="logs" inverseEntity="EventType"/>
     </entity>
+    <entity name="MoodLog" representedClassName="MoodLog" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
     <elements>
         <element name="EventType" positionX="-63" positionY="-18" width="128" height="89"/>
         <element name="EventLog" positionX="100" positionY="-18" width="128" height="74"/>
+        <element name="MoodLog" positionX="-63" positionY="120" width="128" height="74"/>
     </elements>
 </model>

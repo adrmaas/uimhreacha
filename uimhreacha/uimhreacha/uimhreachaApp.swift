@@ -1,9 +1,6 @@
 //
 //  uimhreachaApp.swift
 //  uimhreacha
-//
-//  Created by Andrew Reilly on 2026-04-20.
-//
 
 import SwiftUI
 import CoreData
@@ -14,8 +11,16 @@ struct uimhreachaApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            TabView {
+                ContentView()
+                    .tabItem { Label("Events", systemImage: "list.bullet") }
+                MoodView()
+                    .tabItem { Label("Mood", systemImage: "face.smiling") }
+            }
+            .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            .onAppear {
+                NotificationManager.requestPermissionAndSchedule()
+            }
         }
     }
 }
