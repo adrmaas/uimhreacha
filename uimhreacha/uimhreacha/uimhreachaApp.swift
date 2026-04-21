@@ -16,6 +16,8 @@ struct uimhreachaApp: App {
                     .tabItem { Label("Events", systemImage: "list.bullet") }
                 MoodView()
                     .tabItem { Label("Mood", systemImage: "face.smiling") }
+                InsightsView()
+                    .tabItem { Label("Insights", systemImage: "chart.line.uptrend.xyaxis") }
             }
             .environment(\.managedObjectContext, persistenceController.container.viewContext)
             .onAppear {
